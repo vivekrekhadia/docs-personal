@@ -4,6 +4,7 @@ import { clerkClient } from "@clerk/nextjs/server";
 import { parseStringify } from "../utils";
 
 export const getClerkUser = async ({ userIds }: { userIds: string[] }) => {
+  console.log("userIds", userIds);
   try {
     const { data } = await clerkClient.users.getUserList({
       emailAddress: userIds,
